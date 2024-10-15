@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+{%block title%}Inicio{%endblock%}
+{%block content%}
+    <h1>Inicio</h1>
+    <p>Bienvenido a la aplicación de convocatorias</p>
+
+    <div class="container">
+        <h3>Link a Convocatoria</h3>
+        <a href="{{url_for('main.convocatoria')}}">Convocatoria</a>
+    </div>
+
+{%endblock%}
