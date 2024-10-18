@@ -1,12 +1,49 @@
-{%extends 'base.html'%}
-{%block title%}Inicio{%endblock%}
-{%block content%}
-    <h1>Inicio</h1>
-    <p>Bienvenido a la aplicación de convocatorias</p>
+<!-- app/templates/index.html -->
+{% extends 'base.html' %}
+{% block title %}Inicio{% endblock %}
 
-    <div class="container">
-        <h3>Link a Convocatoria</h3>
-        <a href="{{url_for('main.convocatoria')}}">Convocatoria</a>
+{% block content %}
+<div class="jumbotron text-center mt-4">
+    <h1 class="display-4">Bienvenido a la Aplicación de Convocatorias</h1>
+    <p class="lead">Solicita tu espacio de estacionamiento a través de nuestro sistema de convocatorias.</p>
+    <hr class="my-4">
+    <p>Haz clic en el botón a continuación para iniciar el proceso de convocatoria.</p>
+    <a class="btn btn-primary btn-lg" href="{{ url_for('main.convocatoria') }}" role="button">Ir a Convocatoria</a>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Fácil de Usar</h5>
+                    <p class="card-text">Nuestro sistema está diseñado para ser intuitivo y fácil de navegar, permitiéndote completar tu registro en pocos pasos.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Seguro y Confiable</h5>
+                    <p class="card-text">Tu información personal está protegida con los más altos estándares de seguridad.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Rápido y Eficiente</h5>
+                    <p class="card-text">Nuestro sistema de convocatoria automatiza el proceso para que puedas concentrarte en lo que realmente importa.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-{%endblock%}
+</div>
+
+<div class="container mt-5">
+    <footer class="bg-light text-center py-3">
+        <p class="mb-0">© 2024 Mi Aplicación de Convocatorias. Todos los derechos reservados.</p>
+    </footer>
+</div>
+{% endblock %}

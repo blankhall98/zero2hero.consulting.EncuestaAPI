@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Administración - Usuarios{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Administración de Usuarios</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Matrícula</th>
+                    <th>Nombre Completo</th>
+                    <th>Teléfono</th>
+                    <th>Correo Electrónico</th>
+                    <th>Antigüedad</th>
+                    <th>Días de Descanso</th>
+                    <th>Documentos</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.matricula }}</td>
+                    <td>{{ user.nombres }} {{ user.apellido_paterno }} {{ user.apellido_materno }}</td>
+                    <td>{{ user.telefono }}</td>
+                    <td>{{ user.correo_electronico }}</td>
+                    <td>{{ user.antiguedad_anos }} años, {{ user.antiguedad_quincenas }} quincenas, {{ user.antiguedad_dias }} días</td>
+                    <td>{{ user.dias_descanso }}</td>
+                    <td>
+                        <a href="{{ url_for('admin.download_file', filename=user.tarjeton_pago) }}" class="btn btn-sm btn-outline-primary mb-1">Tarjetón de Pago</a>
+                        <a href="{{ url_for('admin.download_file', filename=user.licencia_manejo) }}" class="btn btn-sm btn-outline-secondary mb-1">Licencia de Manejo</a>
+                        <a href="{{ url_for('admin.download_file', filename=user.tarjeta_circulacion) }}" class="btn btn-sm btn-outline-success mb-1">Tarjeta de Circulación</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
