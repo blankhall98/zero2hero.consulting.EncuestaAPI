@@ -1,0 +1,58 @@
+{% extends "base_admin.html" %}
+
+{% block admin_content %}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Welcome to the Admin Dashboard</h1>
+</div>
+
+<div class="row">
+    <div class="col-lg-6 mb-4">
+        <div class="card shadow-sm border-0 p-3">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-users fa-2x me-3" style="color: #333;"></i>
+                <div>
+                    <h5 class="card-title mb-0">Manage Users</h5>
+                    <p class="card-text text-muted">View and manage registered users.</p>
+                    <a href="{{ url_for('admin.view_users') }}" class="btn btn-dark btn-sm">View Users</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 mb-4">
+        <div class="card shadow-sm border-0 p-3">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-download fa-2x me-3" style="color: #333;"></i>
+                <div>
+                    <h5 class="card-title mb-0">Download Data</h5>
+                    <p class="card-text text-muted">Export user data for analysis.</p>
+                    <a href="{{ url_for('admin.download_data') }}" class="btn btn-dark btn-sm">Download Data</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 mb-4">
+        <div class="card shadow-sm border-0 p-3">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-chart-line fa-2x me-3" style="color: #333;"></i>
+                <div>
+                    <h5 class="card-title mb-0">View Statistics</h5>
+                    <p class="card-text text-muted">Analyze user engagement and app statistics.</p>
+                    <a href="{{ url_for('admin.view_statistics') }}" class="btn btn-dark btn-sm">See Statistics</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 mb-4">
+        <div class="card shadow-sm border-0 p-3">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-user-plus fa-2x me-3" style="color: #333;"></i>
+                <div>
+                    <h5 class="card-title mb-0">Create New Admin</h5>
+                    <p class="card-text text-muted">Add a new admin with dashboard access.</p>
+                    <a href="{{ url_for('admin.create_admin') }}" class="btn btn-dark btn-sm">Create Admin</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
